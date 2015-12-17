@@ -80,7 +80,7 @@ static NSString *DayCell = @"DayCell";
     
 //    self.collectionView.bounces = YES;
     
-    self.collectionView.pagingEnabled = YES;
+//    self.collectionView.pagingEnabled = YES;
     
     self.collectionView.delegate = self;//实现网格视图的delegate
     
