@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 Jerome Morissard. All rights reserved.
 //
 
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
 
 #import "CalendarMonthHeaderView.h"
 #import "Color.h"
@@ -24,38 +21,38 @@
 @end
 
 
-#define CATDayLabelWidth  40.0f
-#define CATDayLabelHeight 20.0f
-
 @implementation CalendarMonthHeaderView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         [self setup];
     }
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Initialization code
         [self setup];
     }
     return self;
 }
 
-- (void)setup
-{
+- (void)setup{
+    
+    
     
     self.clipsToBounds = YES;
+    CGFloat mainWidth = [[UIScreen mainScreen]bounds].size.width;
+    CGFloat dayLabelHeight = 20.0f;
+    CGFloat dayLabelWidth = mainWidth/7;
+    
+    
+    
     
     //月份
-    UILabel *masterLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.f, 10.0f, 300.0f, 30.f)];
+    UILabel *masterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 10.0f, mainWidth, 30.f)];
     [masterLabel setBackgroundColor:[UIColor clearColor]];
     [masterLabel setTextAlignment:NSTextAlignmentCenter];
     [masterLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
@@ -63,11 +60,12 @@
     self.masterLabel.textColor = COLOR_THEME;
     [self addSubview:self.masterLabel];
     
-    CGFloat xOffset = 5.0f;
-    CGFloat yOffset = 45.0f;
+    
 
     //一，二，三，四，五，六，日
-    UILabel *dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
+    CGFloat xOffset = 0.0f;
+    CGFloat yOffset = 45.0f;
+    UILabel *dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, dayLabelWidth, dayLabelHeight)];
     [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
     [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
     self.day1OfTheWeekLabel = dayOfTheWeekLabel;
@@ -75,8 +73,8 @@
     self.day1OfTheWeekLabel.textColor = COLOR_THEME1;
     [self addSubview:self.day1OfTheWeekLabel];
 
-    xOffset += CATDayLabelWidth + 5.0f;
-    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
+    xOffset += dayLabelWidth;
+    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, dayLabelWidth, dayLabelHeight)];
     [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
     [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
     self.day2OfTheWeekLabel = dayOfTheWeekLabel;
@@ -84,8 +82,8 @@
     self.day2OfTheWeekLabel.textColor = COLOR_THEME;
     [self addSubview:self.day2OfTheWeekLabel];
 
-    xOffset += CATDayLabelWidth + 5.0f;
-    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
+    xOffset += dayLabelWidth;
+    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, dayLabelWidth, dayLabelHeight)];
     [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
     [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
     self.day3OfTheWeekLabel = dayOfTheWeekLabel;
@@ -93,8 +91,8 @@
     self.day3OfTheWeekLabel.textColor = COLOR_THEME;
     [self addSubview:self.day3OfTheWeekLabel];
 
-    xOffset += CATDayLabelWidth + 5.0f;
-    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
+    xOffset += dayLabelWidth;
+    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, dayLabelWidth, dayLabelHeight)];
     [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
     [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
     self.day4OfTheWeekLabel = dayOfTheWeekLabel;
@@ -102,8 +100,8 @@
     self.day4OfTheWeekLabel.textColor = COLOR_THEME;
     [self addSubview:self.day4OfTheWeekLabel];
 
-    xOffset += CATDayLabelWidth + 5.0f;
-    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
+    xOffset += dayLabelWidth;
+    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, dayLabelWidth, dayLabelHeight)];
     [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
     [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
     self.day5OfTheWeekLabel = dayOfTheWeekLabel;
@@ -111,8 +109,8 @@
     self.day5OfTheWeekLabel.textColor = COLOR_THEME;
     [self addSubview:self.day5OfTheWeekLabel];
 
-    xOffset += CATDayLabelWidth + 5.0f;
-    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
+    xOffset += dayLabelWidth;
+    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, dayLabelWidth, dayLabelHeight)];
     [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
     [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
     self.day6OfTheWeekLabel = dayOfTheWeekLabel;
@@ -120,8 +118,8 @@
     self.day6OfTheWeekLabel.textColor = COLOR_THEME;
     [self addSubview:self.day6OfTheWeekLabel];
 
-    xOffset += CATDayLabelWidth + 5.0f;
-    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
+    xOffset += dayLabelWidth;
+    dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset,yOffset, dayLabelWidth, dayLabelHeight)];
     [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
     [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
     self.day7OfTheWeekLabel = dayOfTheWeekLabel;
@@ -135,8 +133,7 @@
 
 
 //设置 @"日", @"一", @"二", @"三", @"四", @"五", @"六"
-- (void)updateWithDayNames:(NSArray *)dayNames
-{
+- (void)updateWithDayNames:(NSArray *)dayNames{
     for (int i = 0 ; i < dayNames.count; i++) {
         switch (i) {
             case 0:

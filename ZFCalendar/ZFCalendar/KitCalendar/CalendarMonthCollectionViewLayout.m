@@ -6,9 +6,7 @@
 //  Copyright (c) 2014 Jerome Morissard. All rights reserved.
 //
 
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
+ 
 
 #import "CalendarMonthCollectionViewLayout.h"
 
@@ -17,21 +15,21 @@
 
 @implementation CalendarMonthCollectionViewLayout
 
-- (instancetype)init
-{
+- (id)init {
     self = [super init];
     if (self) {
-        self.headerReferenceSize = CGSizeMake(320.0f, 65.0f);//头部视图的框架大小
         
-        self.itemSize = CGSizeMake(320/7, 70.0f);//每个cell的大小
+        CGFloat mainWidth = [[UIScreen mainScreen]bounds].size.width;
+        CGFloat dayLabelHeight = 80.0;
+        CGFloat dayLabelWidth = mainWidth/7;
+
         
+        self.headerReferenceSize = CGSizeMake(mainWidth, 65.0f);//头部视图的框架大小
+        self.itemSize = CGSizeMake(dayLabelWidth, dayLabelHeight);//每个cell的大小
         self.minimumLineSpacing = 0.0f;//每行的最小间距
-        
         self.minimumInteritemSpacing = 0.0f;//每列的最小间距
-        
         self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);//网格视图的/上/左/下/右,的边距
     }
-    
     return self;
 }
 

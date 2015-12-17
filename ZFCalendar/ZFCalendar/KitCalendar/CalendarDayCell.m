@@ -6,16 +6,12 @@
 //  Copyright (c) 2014年 张凡. All rights reserved.
 //
 
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
 
 #import "CalendarDayCell.h"
 
 @implementation CalendarDayCell
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         [self initView];
@@ -25,9 +21,12 @@
 
 - (void)initView{
     
+    
     //选中时显示的图片
-    imgview = [[UIImageView alloc]initWithFrame:CGRectMake(5, 15, self.bounds.size.width-10, self.bounds.size.width-10)];
-    imgview.image = [UIImage imageNamed:@"chack.png"];
+    imgview = [[UILabel alloc]initWithFrame:CGRectMake(5, 15, self.bounds.size.width-10, self.bounds.size.width-10)];
+    imgview.backgroundColor = COLOR_THEME;
+    imgview.layer.cornerRadius = imgview.bounds.size.height/2;
+    imgview.clipsToBounds = YES;
     [self addSubview:imgview];
     
     //日期
@@ -47,8 +46,7 @@
 }
 
 
-- (void)setModel:(CalendarDayModel *)model
-{
+- (void)setModel:(CalendarDayModel *)model{
 
 
     switch (model.style) {
@@ -62,7 +60,7 @@
             if (model.holiday) {
                 day_lab.text = model.holiday;
             }else{
-                day_lab.text = [NSString stringWithFormat:@"%d",model.day];
+                day_lab.text = [NSString stringWithFormat:@"%lu",(unsigned long)model.day];
             }
             
             day_lab.textColor = [UIColor lightGrayColor];
@@ -77,7 +75,7 @@
                 day_lab.text = model.holiday;
                 day_lab.textColor = [UIColor orangeColor];
             }else{
-                day_lab.text = [NSString stringWithFormat:@"%d",model.day];
+                day_lab.text = [NSString stringWithFormat:@"%lu",(unsigned long)model.day];
                 day_lab.textColor = COLOR_THEME;
             }
             
@@ -92,7 +90,7 @@
                 day_lab.text = model.holiday;
                 day_lab.textColor = [UIColor orangeColor];
             }else{
-                day_lab.text = [NSString stringWithFormat:@"%d",model.day];
+                day_lab.text = [NSString stringWithFormat:@"%lu",(unsigned long)model.day];
                 day_lab.textColor = COLOR_THEME1;
             }
             
@@ -102,7 +100,7 @@
             
         case CellDayTypeClick://被点击的日期
             [self hidden_NO];
-            day_lab.text = [NSString stringWithFormat:@"%d",model.day];
+            day_lab.text = [NSString stringWithFormat:@"%lu",(unsigned long)model.day];
             day_lab.textColor = [UIColor whiteColor];
             day_title.text = model.Chinese_calendar;
             imgview.hidden = NO;

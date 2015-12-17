@@ -22,7 +22,6 @@
 		521559B11C104D1800A05DF3 /* CalendarMonthCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 521559A41C104D1800A05DF3 /* CalendarMonthCollectionViewLayout.m */; };
 		521559B21C104D1800A05DF3 /* CalendarMonthHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 521559A61C104D1800A05DF3 /* CalendarMonthHeaderView.m */; };
 		521559B31C104D1800A05DF3 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521559A81C104D1800A05DF3 /* CalendarViewController.m */; };
-		521559B41C104D1800A05DF3 /* chack.png in Resources */ = {isa = PBXBuildFile; fileRef = 521559A91C104D1800A05DF3 /* chack.png */; };
 		521559B51C104D1800A05DF3 /* NSDate+WQCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 521559AC1C104D1800A05DF3 /* NSDate+WQCalendarLogic.m */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +73,6 @@
 		521559A61C104D1800A05DF3 /* CalendarMonthHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMonthHeaderView.m; sourceTree = "<group>"; };
 		521559A71C104D1800A05DF3 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		521559A81C104D1800A05DF3 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		521559A91C104D1800A05DF3 /* chack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chack.png; sourceTree = "<group>"; };
 		521559AA1C104D1800A05DF3 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		521559AB1C104D1800A05DF3 /* NSDate+WQCalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WQCalendarLogic.h"; sourceTree = "<group>"; };
 		521559AC1C104D1800A05DF3 /* NSDate+WQCalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WQCalendarLogic.m"; sourceTree = "<group>"; };
@@ -171,24 +169,23 @@
 		5215599A1C104D1800A05DF3 /* KitCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				5215599F1C104D1800A05DF3 /* CalendarHomeViewController.h */,
+				521559A01C104D1800A05DF3 /* CalendarHomeViewController.m */,
+				521559A71C104D1800A05DF3 /* CalendarViewController.h */,
+				521559A81C104D1800A05DF3 /* CalendarViewController.m */,
+				521559A51C104D1800A05DF3 /* CalendarMonthHeaderView.h */,
+				521559A61C104D1800A05DF3 /* CalendarMonthHeaderView.m */,
+				521559A31C104D1800A05DF3 /* CalendarMonthCollectionViewLayout.h */,
+				521559A41C104D1800A05DF3 /* CalendarMonthCollectionViewLayout.m */,
 				5215599B1C104D1800A05DF3 /* CalendarDayCell.h */,
 				5215599C1C104D1800A05DF3 /* CalendarDayCell.m */,
 				5215599D1C104D1800A05DF3 /* CalendarDayModel.h */,
 				5215599E1C104D1800A05DF3 /* CalendarDayModel.m */,
-				5215599F1C104D1800A05DF3 /* CalendarHomeViewController.h */,
-				521559A01C104D1800A05DF3 /* CalendarHomeViewController.m */,
 				521559A11C104D1800A05DF3 /* CalendarLogic.h */,
 				521559A21C104D1800A05DF3 /* CalendarLogic.m */,
-				521559A31C104D1800A05DF3 /* CalendarMonthCollectionViewLayout.h */,
-				521559A41C104D1800A05DF3 /* CalendarMonthCollectionViewLayout.m */,
-				521559A51C104D1800A05DF3 /* CalendarMonthHeaderView.h */,
-				521559A61C104D1800A05DF3 /* CalendarMonthHeaderView.m */,
-				521559A71C104D1800A05DF3 /* CalendarViewController.h */,
-				521559A81C104D1800A05DF3 /* CalendarViewController.m */,
-				521559A91C104D1800A05DF3 /* chack.png */,
-				521559AA1C104D1800A05DF3 /* Color.h */,
 				521559AB1C104D1800A05DF3 /* NSDate+WQCalendarLogic.h */,
 				521559AC1C104D1800A05DF3 /* NSDate+WQCalendarLogic.m */,
+				521559AA1C104D1800A05DF3 /* Color.h */,
 			);
 			path = KitCalendar;
 			sourceTree = "<group>";
@@ -298,7 +295,6 @@
 			files = (
 				521559771C1041E500A05DF3 /* LaunchScreen.storyboard in Resources */,
 				521559741C1041E500A05DF3 /* Assets.xcassets in Resources */,
-				521559B41C104D1800A05DF3 /* chack.png in Resources */,
 				521559721C1041E500A05DF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

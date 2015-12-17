@@ -6,9 +6,7 @@
 //  Copyright (c) 2014年 张凡. All rights reserved.
 //
 
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
+ 
 
 #import "CalendarViewController.h"
 //UI
@@ -19,12 +17,8 @@
 #import "CalendarDayModel.h"
 
 
-@interface CalendarViewController ()
-<UICollectionViewDataSource,UICollectionViewDelegate>
-{
-
+@interface CalendarViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>{
      NSTimer* timer;//定时器
-
 }
 @end
 
@@ -35,30 +29,19 @@ static NSString *MonthHeader = @"MonthHeaderView";
 static NSString *DayCell = @"DayCell";
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         [self initData];
         [self initView];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 - (void)initView{
@@ -66,9 +49,9 @@ static NSString *DayCell = @"DayCell";
     
     [self setTitle:@"选择日期"];
     
-    CalendarMonthCollectionViewLayout *layout = [CalendarMonthCollectionViewLayout new];
+    CalendarMonthCollectionViewLayout *layout = [[CalendarMonthCollectionViewLayout alloc]init];
     
-//     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal]; //设置横向还
+    //[layout setScrollDirection:UICollectionViewScrollDirectionHorizontal]; //设置横向还
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout]; //初始化网格视图大小
     
@@ -105,15 +88,13 @@ static NSString *DayCell = @"DayCell";
 #pragma mark - CollectionView代理方法
 
 //定义展示的Section的个数
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return self.calendarMonth.count;
 }
 
 
 //定义展示的UICollectionViewCell的个数
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     NSMutableArray *monthArray = [self.calendarMonth objectAtIndex:section];
     
     return monthArray.count;
@@ -121,8 +102,7 @@ static NSString *DayCell = @"DayCell";
 
 
 //每个UICollectionView展示的内容
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CalendarDayCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DayCell forIndexPath:indexPath];
     
     NSMutableArray *monthArray = [self.calendarMonth objectAtIndex:indexPath.section];
@@ -134,8 +114,7 @@ static NSString *DayCell = @"DayCell";
     return cell;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionReusableView *reusableview = nil;
 
     if (kind == UICollectionElementKindSectionHeader){
@@ -154,8 +133,7 @@ static NSString *DayCell = @"DayCell";
 
 
 //UICollectionView被选中时调用的方法
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     NSMutableArray *month_Array = [self.calendarMonth objectAtIndex:indexPath.section];
     CalendarDayModel *model = [month_Array objectAtIndex:indexPath.row];
@@ -174,8 +152,7 @@ static NSString *DayCell = @"DayCell";
     }
 }
 //返回这个UICollectionView是否可以被选择
--(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     return YES;
 }
