@@ -15,3 +15,5 @@ CalendarHomeViewController *chvc;
 （3）初始化方法：
 
 [chvc setAirPlaneToDay:365 ToDateforString:nil];
+
+![](https://github.com/zhangfan520/ZFCalendar/ZFCalendar/IMG_0244.jpg)
