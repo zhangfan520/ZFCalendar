@@ -25,7 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UIButton *but1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, 300, 50)];
+    CGFloat width = self.view.bounds.size.width;
+    
+    UIButton *but1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, width-20, 50)];
     but1.backgroundColor = COLOR_THEME;
     but1.tintColor = [UIColor whiteColor];
     but1.tag = 1;
@@ -34,7 +36,7 @@
     [self.view addSubview:but1];
     
     
-    UIButton *but2 = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, 300, 50)];
+    UIButton *but2 = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, width-20, 50)];
     but2.backgroundColor = COLOR_THEME;
     but2.titleLabel.textColor = [UIColor whiteColor];
     but2.tag = 2;
@@ -43,7 +45,7 @@
     [self.view  addSubview:but2];
     
     
-    UIButton *but3 = [[UIButton alloc]initWithFrame:CGRectMake(10, 300, 300, 50)];
+    UIButton *but3 = [[UIButton alloc]initWithFrame:CGRectMake(10, 300, width-20, 50)];
     but3.backgroundColor = COLOR_THEME;
     but3.titleLabel.textColor = [UIColor whiteColor];
     but3.tag = 3;
